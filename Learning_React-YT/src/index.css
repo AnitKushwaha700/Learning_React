@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --color-primary:          #c2410c;  /* Brand orange-red */
   --color-primary-content:  #ffffff;  /* Text on primary background */
@@ -13,3 +14,13 @@
   --color-error:            #ef4444;  /* Red for error states */
   --color-success:          #22c55e;  /* Green for success states */
 }
+
+@keyframes slideX {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(1100px);
+  }
+}
+

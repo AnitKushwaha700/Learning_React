@@ -3,51 +3,61 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className=" bg-[var(--color-neutral)] text-white ps-30 pe-20 pb-10 text-center">
-        <p className="py-10">
+      <div className=" bg-[var(--color-neutral)] text-white px-30 pb-10 text-center">
+        <p className="p-8">
           --- Your favorite food delivery platform connecting customers with
           restaurants and riders. ---
         </p>
         <div>
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-6 text-start pb-10">
             <div>
               <img src="circleLogo.png" alt="logo" width="120px" />
             </div>
 
             <div>
-              <h1 className="font-semibold mb-2">Quick Links</h1>
-              <ul className="space-y-1">
-                <li>Home</li>
-                <li>About</li>
-                <li>Order Now</li>
+              <h1 className="font-bold mb-2">Quick Links</h1>
+              <ul className="space-y-1 py-2">
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Home</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">About</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Order Now</li>
               </ul>
             </div>
 
             <div>
-              <h1 className="font-semibold mb-2">For Restaurants</h1>
-              <ul className="space-y-1">
-                <li>Partner With Us</li>
-                <li>Restaurant Dashboard</li>
+              <h1 className="font-bold mb-2">For Restaurants</h1>
+              <ul className="space-y-1 py-2">
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Partner With Us</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Restaurant Dashboard</li>
               </ul>
             </div>
 
             <div>
-              <h1 className="font-semibold mb-2">For Rider</h1>
-              <ul className="space-y-1">
-                <li>Become a Rider</li>
-                <li>Rider Dashboard</li>
+              <h1 className="font-bold mb-2">For Rider</h1>
+              <ul className="space-y-1 py-2">
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Become a Rider</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Rider Dashboard</li>
               </ul>
             </div>
 
             <div>
-              <h1 className="font-semibold mb-2">Feedback & Support</h1>
-              <ul className="space-y-1">
-                <li>Submit Feedback</li>
-                <li>Help Center</li>
-                <li>Contact Us</li>
+              <h1 className="font-bold mb-2">Feedback & Support</h1>
+              <ul className="space-y-1 py-2">
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Submit Feedback</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Help Center</li>
+                <li className="text-gray-300 hover:text-[var(--color-primary)]">Contact Us</li>
               </ul>
             </div>
           </div>
+        </div>
+
+        <hr className="p-4 text-sm opacity-75" />
+        <div className="flex justify-between">
+          <p>© 2026 Cravings. All rights reserved.</p>
+          <ul className="flex gap-7">
+            <li className="text-gray-300 hover:text-[var(--color-primary)]">Privacy Policy</li>
+            <li className="text-gray-300 hover:text-[var(--color-primary)]">Terms of service</li>
+            <li className="text-gray-300 hover:text-[var(--color-primary)]">Site Map</li>
+          </ul>
         </div>
       </div>
     </>
