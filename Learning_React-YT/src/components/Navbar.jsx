@@ -14,12 +14,14 @@ const Navbar = () => {
               className="animate-bounce"
             />
           </Link>
-          <img
-            src="Hero.png"
-            alt=""
-            width="90px"
-            className="animate-[slideX_10s_ease-in-out_infinite]"
-          />
+          <Link to="/Fun">
+            <img
+              src="Hero.png"
+              alt=""
+              width="90px"
+              className="animate-[slideX_10s_ease-in-out_infinite]"
+            />
+          </Link>
         </div>
         <div className="text-lg flex items-center gap-3">
           <Link to="/Login">

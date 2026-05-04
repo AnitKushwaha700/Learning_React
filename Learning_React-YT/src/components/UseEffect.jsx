@@ -30,7 +30,7 @@ import React, { useState, useEffect } from "react";
 
 
 
-const ThemeSection = () => {
+const UseEffect = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   // 1️⃣ Detect system theme on first load
@@ -78,4 +78,4 @@ const ThemeSection = () => {
   );
 };
 
-export default ThemeSection;
+export default UseEffect;
