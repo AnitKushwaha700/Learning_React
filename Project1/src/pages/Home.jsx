@@ -1,17 +1,21 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import HeroSection from "../components/home/HeroSection";
-import { Link } from "react-router-dom";
+import HotelCard from "../components/home/HotelCard";
+import hotels from "../data/hotels";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <HeroSection />
 
-      <div className="flex gap-4 p-4">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+      <div
+        className="max-w-7xl mx-auto px-4 py-10 
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+                gap-6 lg:gap-10"
+      >
+        {hotels.map((hotel) => (
+          <HotelCard key={hotel.id} hotel={hotel} />
+        ))}
       </div>
     </div>
   );

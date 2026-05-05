@@ -1,0 +1,88 @@
+const hotels = [
+  {
+    id: 1,
+    name: "Luxury Palace",
+    location: "Delhi",
+    price: 1999,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+  },
+  {
+    id: 2,
+    name: "Beach Paradise",
+    location: "Goa",
+    price: 2999,
+    image:"https://images.unsplash.com/photo-1582719508461-905c673771fd",
+  },
+  {
+    id: 3,
+    name: "Mountain Escape",
+    location: "Manali",
+    price: 1499,
+    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+  },
+  {
+    id: 4,
+    name: "Royal Heritage",
+    location: "Jaipur",
+    price: 2599,
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+  },
+  {
+    id: 5,
+    name: "City Comfort Inn",
+    location: "Mumbai",
+    price: 2199,
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+  },
+  {
+    id: 6,
+    name: "Lake View Resort",
+    location: "Udaipur",
+    price: 2799,
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+  },
+  {
+    id: 7,
+    name: "Hilltop Retreat",
+    location: "Shimla",
+    price: 1699,
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+  },
+  {
+    id: 8,
+    name: "Urban Stay",
+    location: "Bangalore",
+    price: 1899,
+    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427",
+  },
+  {
+    id: 9,
+    name: "Desert Oasis",
+    location: "Jaisalmer",
+    price: 2399,
+    image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+  },
+  {
+    id: 10,
+    name: "Green Valley Resort",
+    location: "Kerala",
+    price: 2699,
+    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6",
+  },
+  {
+    id: 11,
+    name: "Snow Peak Hotel",
+    location: "Kashmir",
+    price: 3299,
+    image:"https://images.unsplash.com/photo-1590490360182-c33d57733427",
+  },
+  {
+    id: 12,
+    name: "Airport Express Inn",
+    location: "Hyderabad",
+    price: 1599,
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d",
+  },
+];
+
+export default hotels;

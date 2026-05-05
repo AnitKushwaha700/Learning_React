@@ -1,27 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/oyoLogo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <>
-      <div className=" flex justify-center sticky top-0 z-99">
-        <div className="flex justify-between items-center gap-20 px-5 h-20">
-          <div>
-            <img src={logo} width="100px" alt="" />
-          </div>
-          <div className="flex gap-10 text-blue-500 font-bold">
-            <a href="Home">Home</a>
-            <a href="About">About</a>
-            <a href="Services">Services</a>
-            <a href="Case Study">Case Study</a>
-            <a href="Portfolio">Portfolio</a>
-            <a href="Pages">Pages</a>
-            <a href="Blog">Blog</a>
-            <a href="Contact">Contact</a>
-          </div>
+    <div className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 h-16">
+
+        <img src={logo} alt="logo" className="w-28 md:w-32" />
+
+        <div className="hidden md:flex gap-8 text-blue-500 font-semibold">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+
+        {/* Hamburger Icon */}
+        <div
+          className="md:hidden text-2xl cursor-pointer"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
         </div>
       </div>
-    </>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden flex flex-col items-center gap-4 pb-6 text-blue-500 font-semibold bg-white shadow-md">
+          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/about" onClick={() => setOpen(false)}>About</Link>
+          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+          <Link to="/portfolio" onClick={() => setOpen(false)}>Portfolio</Link>
+          <Link to="/blog" onClick={() => setOpen(false)}>Blog</Link>
+          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+        </div>
+      )}
+    </div>
   );
 };
 
