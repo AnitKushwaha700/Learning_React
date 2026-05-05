@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 h-16">
 
-        <img src={logo} alt="logo" className="w-28 md:w-32" />
+        <img src={logo} alt="logo" className="w-28 md:w-32 animate-bounce" />
 
         <div className="hidden md:flex gap-8 text-blue-500 font-semibold">
           <Link to="/">Home</Link>
