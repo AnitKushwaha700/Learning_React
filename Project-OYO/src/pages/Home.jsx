@@ -1,48 +1,48 @@
 import React, { useState } from "react";
-import HeroSection from "../components/home/HeroSection";
-import HotelCard from "../components/home/HotelCard";
-import hotels from "../data/hotels";
 
+import HeroSection from "../components/home/HeroSection";
 import PopularCities from "../components/home/PopularCities";
-import Offers from "../components/home/Offers";
+import PopularHotels from "../components/home/PopularHotels";
+import OfferBanner from "../components/home/OfferBanner";
 import WhyChooseUs from "../components/home/WhyChooseUs";
+import Testimonials from "../components/home/Testimonials";
 import Newsletter from "../components/home/Newsletter";
+
+import hotels from "../data/hotels";
 
 const Home = () => {
   const [search, setSearch] = useState("");
 
+  // Search Filter
   const filteredHotels = hotels.filter((hotel) =>
-    (hotel.city || "").toLowerCase().includes(search.toLowerCase()),
+    hotel.location.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <>
-      <div>
-        <HeroSection setSearch={setSearch} />
+    <main className="overflow-hidden">
 
-        <PopularCities />
+      {/* Hero Section */}
+      <HeroSection setSearch={setSearch} />
 
-        <div className="max-w-screen-2xl mx-auto px-6 py-10">
-          <h2 className="text-2xl font-bold mb-6">Available Hotels</h2>
+      {/* Popular Cities */}
+      <PopularCities />
 
-          {filteredHotels.length === 0 ? (
-            <p className="text-center text-gray-500 ">No hotels found 😢</p>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 ">
-              {filteredHotels.map((hotel) => (
-                <HotelCard key={hotel.id} hotel={hotel} />
-              ))}
-            </div>
-          )}
-        </div>
+      {/* Hotels Section */}
+      <PopularHotels hotels={filteredHotels} />
 
-        <Offers />
+      {/* Offer Banner */}
+      <OfferBanner />
 
-        <WhyChooseUs />
+      {/* Why Choose Us */}
+      <WhyChooseUs />
 
-        <Newsletter />
-      </div>
-    </>
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Newsletter */}
+      <Newsletter />
+
+    </main>
   );
 };
 

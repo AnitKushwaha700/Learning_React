@@ -4,64 +4,159 @@ import logo from "../../assets/images/title.png";
 
 const HeroSection = ({ setSearch }) => {
   return (
-    <section className="relative h-[85vh] w-full overflow-hidden">
+    <section className="relative h-[95vh] w-full overflow-hidden">
 
+      {/* Background Image */}
       <img
         src={heroImg}
         alt="hero"
-        className="h-full w-full object-cover scale-105"
+        className="h-full w-full object-cover"
       />
 
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
+      {/* Main Content */}
+      <div className="absolute inset-0 flex items-center justify-center px-4">
 
-        <img
-          src={logo}
-          alt="logo"
-          className="w-28 sm:w-36 md:w-44 mb-4 animate-bounce"
-          data-aos="fade-down"
-        />
+        <div className="max-w-7xl w-full text-center text-white">
 
-        <h1
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight max-w-3xl"
-          data-aos="fade-up"
-        >
-          Find and book the perfect stay
-        </h1>
+          {/* Logo */}
+          <img
+            src={logo}
+            alt="logo"
+            className="w-32 sm:w-40 md:w-52 mx-auto mb-5"
+            data-aos="fade-down"
+          />
 
-        <p
-          className="text-sm sm:text-base text-gray-300 mt-3 mb-8 max-w-xl"
-          data-aos="fade-up"
-          data-aos-delay="150"
-        >
-          Affordable hotels, verified stays, and seamless booking experience.
-        </p>
+          {/* Heading */}
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto"
+            data-aos="fade-up"
+          >
+            Find Your Perfect
+            <span className="text-red-500"> Stay Anywhere</span>
+          </h1>
 
-        <div
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-5 flex flex-col md:flex-row items-center gap-3 w-full max-w-3xl shadow-lg"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
+          {/* Subheading */}
+          <p
+            className="text-gray-300 mt-5 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            Book affordable hotels, luxury rooms, and comfortable stays
+            across India with seamless online booking experience.
+          </p>
 
-          <div className="flex flex-col w-full md:flex-1 text-left">
-            <label className="text-xs text-gray-300 ">
-            </label>
+          {/* Search Box */}
+          <div
+            className="mt-10 bg-white rounded-2xl p-4 md:p-5 shadow-2xl max-w-6xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
 
-            <input
-              type="text"
-              placeholder="Search city or hotel"
-              onChange={(e) => setSearch && setSearch(e.target.value)}
-              className="p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-red-500"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+              {/* Location */}
+              <div className="flex flex-col text-left">
+                <label className="text-gray-500 text-sm mb-2">
+                  Destination
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Search city or hotel"
+                  onChange={(e) =>
+                    setSearch && setSearch(e.target.value)
+                  }
+                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
+                />
+              </div>
+
+              {/* Check In */}
+              <div className="flex flex-col text-left">
+                <label className="text-gray-500 text-sm mb-2">
+                  Check In
+                </label>
+
+                <input
+                  type="date"
+                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
+                />
+              </div>
+
+              {/* Check Out */}
+              <div className="flex flex-col text-left">
+                <label className="text-gray-500 text-sm mb-2">
+                  Check Out
+                </label>
+
+                <input
+                  type="date"
+                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
+                />
+              </div>
+
+              {/* Search Button */}
+              <div className="flex items-end">
+                <button className="bg-red-500 hover:bg-red-600 text-white w-full py-3 rounded-xl font-semibold transition duration-300 shadow-md">
+                  Search Hotels
+                </button>
+              </div>
+
+            </div>
           </div>
 
-          <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-medium w-full md:w-auto transition">
-            Search
-          </button>
+          {/* Stats */}
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+                10K+
+              </h2>
+
+              <p className="text-sm text-gray-300 mt-2">
+                Hotels
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+                5M+
+              </h2>
+
+              <p className="text-sm text-gray-300 mt-2">
+                Happy Guests
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+                120+
+              </h2>
+
+              <p className="text-sm text-gray-300 mt-2">
+                Cities
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+                24/7
+              </h2>
+
+              <p className="text-sm text-gray-300 mt-2">
+                Support
+              </p>
+            </div>
+
+          </div>
 
         </div>
-
       </div>
     </section>
   );
