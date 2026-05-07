@@ -1,160 +1,281 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+import {
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaUsers,
+  FaSearch,
+} from "react-icons/fa";
+
 import heroImg from "../../assets/images/home.jpeg";
 import logo from "../../assets/images/title.png";
 
 const HeroSection = ({ setSearch }) => {
   return (
-    <section className="relative h-[95vh] w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden">
 
       {/* Background Image */}
       <img
         src={heroImg}
         alt="hero"
-        className="h-full w-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover animate-[slowZoom_12s_ease-in-out_infinite]"
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/65"></div>
+
+      {/* Animated Glow */}
+      <motion.div
+        animate={{
+          y: [0, -30, 0],
+          x: [0, 20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-0 left-0 w-[500px] h-[500px] bg-red-500/20 blur-3xl rounded-full"
+      />
+
+      <motion.div
+        animate={{
+          y: [0, 30, 0],
+          x: [0, -20, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-500/20 blur-3xl rounded-full"
+      />
 
       {/* Main Content */}
-      <div className="absolute inset-0 flex items-center justify-center px-4">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 md:px-8 py-20">
 
         <div className="max-w-7xl w-full text-center text-white">
 
           {/* Logo */}
-          <img
+          <motion.img
             src={logo}
             alt="logo"
-            className="w-32 sm:w-40 md:w-52 mx-auto mb-5"
-            data-aos="fade-down"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-32 sm:w-40 md:w-52 mx-auto mb-6 drop-shadow-2xl"
           />
 
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm mb-6"
+          >
+            ✨ Trusted By 5M+ Travelers
+          </motion.div>
+
           {/* Heading */}
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto"
-            data-aos="fade-up"
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight max-w-5xl mx-auto"
           >
             Find Your Perfect
-            <span className="text-red-500"> Stay Anywhere</span>
-          </h1>
+            <span className="block text-red-500">
+              Stay Anywhere
+            </span>
+          </motion.h1>
 
           {/* Subheading */}
-          <p
-            className="text-gray-300 mt-5 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
-            data-aos="fade-up"
-            data-aos-delay="150"
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-gray-300 mt-6 text-base md:text-xl max-w-3xl mx-auto leading-relaxed px-2"
           >
-            Book affordable hotels, luxury rooms, and comfortable stays
-            across India with seamless online booking experience.
-          </p>
+            Book affordable hotels, luxury suites, and unforgettable stays
+            across India with seamless booking experience and premium comfort.
+          </motion.p>
 
           {/* Search Box */}
-          <div
-            className="mt-10 bg-white rounded-2xl p-4 md:p-5 shadow-2xl max-w-6xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="300"
+          <motion.div
+            initial={{ opacity: 0, y: 70 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1 }}
+            className="mt-12 bg-white/95 backdrop-blur-xl rounded-[30px] p-5 md:p-7 shadow-2xl max-w-6xl mx-auto"
           >
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-              {/* Location */}
-              <div className="flex flex-col text-left">
-                <label className="text-gray-500 text-sm mb-2">
-                  Destination
-                </label>
+              {/* Destination */}
+              <div className="flex items-center gap-3 border border-gray-200 rounded-2xl px-4 py-4 bg-white">
 
-                <input
-                  type="text"
-                  placeholder="Search city or hotel"
-                  onChange={(e) =>
-                    setSearch && setSearch(e.target.value)
-                  }
-                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
-                />
+                <FaMapMarkerAlt className="text-red-500 text-lg" />
+
+                <div className="flex flex-col text-left w-full">
+                  <label className="text-gray-400 text-xs mb-1">
+                    Destination
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Search city or hotel"
+                    onChange={(e) =>
+                      setSearch && setSearch(e.target.value)
+                    }
+                    className="outline-none text-gray-700 bg-transparent text-sm w-full"
+                  />
+                </div>
+
               </div>
 
               {/* Check In */}
-              <div className="flex flex-col text-left">
-                <label className="text-gray-500 text-sm mb-2">
-                  Check In
-                </label>
+              <div className="flex items-center gap-3 border border-gray-200 rounded-2xl px-4 py-4 bg-white">
 
-                <input
-                  type="date"
-                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
-                />
+                <FaCalendarAlt className="text-red-500 text-lg" />
+
+                <div className="flex flex-col text-left w-full">
+                  <label className="text-gray-400 text-xs mb-1">
+                    Check In
+                  </label>
+
+                  <input
+                    type="date"
+                    className="outline-none text-gray-700 bg-transparent text-sm w-full"
+                  />
+                </div>
+
               </div>
 
-              {/* Check Out */}
-              <div className="flex flex-col text-left">
-                <label className="text-gray-500 text-sm mb-2">
-                  Check Out
-                </label>
+              {/* Guests */}
+              <div className="flex items-center gap-3 border border-gray-200 rounded-2xl px-4 py-4 bg-white">
 
-                <input
-                  type="date"
-                  className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-red-500 text-gray-700"
-                />
+                <FaUsers className="text-red-500 text-lg" />
+
+                <div className="flex flex-col text-left w-full">
+                  <label className="text-gray-400 text-xs mb-1">
+                    Guests
+                  </label>
+
+                  <select className="outline-none text-gray-700 bg-transparent text-sm w-full">
+                    <option>2 Guests</option>
+                    <option>4 Guests</option>
+                    <option>6 Guests</option>
+                  </select>
+                </div>
+
               </div>
 
               {/* Search Button */}
-              <div className="flex items-end">
-                <button className="bg-red-500 hover:bg-red-600 text-white w-full py-3 rounded-xl font-semibold transition duration-300 shadow-md">
-                  Search Hotels
-                </button>
-              </div>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
+                className="bg-red-500 hover:bg-red-600 text-white rounded-2xl font-semibold flex items-center justify-center gap-3 transition duration-300 shadow-xl py-4"
+              >
+
+                <FaSearch />
+
+                Search Hotels
+
+              </motion.button>
 
             </div>
-          </div>
+
+          </motion.div>
 
           {/* Stats */}
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="450"
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 max-w-5xl mx-auto"
           >
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+            {/* Card 1 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.04,
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl py-6 shadow-xl"
+            >
+
+              <h2 className="text-3xl md:text-4xl font-bold text-red-500">
                 10K+
               </h2>
 
               <p className="text-sm text-gray-300 mt-2">
                 Hotels
               </p>
-            </div>
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.04,
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl py-6 shadow-xl"
+            >
+
+              <h2 className="text-3xl md:text-4xl font-bold text-red-500">
                 5M+
               </h2>
 
               <p className="text-sm text-gray-300 mt-2">
                 Happy Guests
               </p>
-            </div>
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.04,
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl py-6 shadow-xl"
+            >
+
+              <h2 className="text-3xl md:text-4xl font-bold text-red-500">
                 120+
               </h2>
 
               <p className="text-sm text-gray-300 mt-2">
                 Cities
               </p>
-            </div>
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl py-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-red-500">
+            </motion.div>
+
+            {/* Card 4 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.04,
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl py-6 shadow-xl"
+            >
+
+              <h2 className="text-3xl md:text-4xl font-bold text-red-500">
                 24/7
               </h2>
 
               <p className="text-sm text-gray-300 mt-2">
                 Support
               </p>
-            </div>
 
-          </div>
+            </motion.div>
+
+          </motion.div>
 
         </div>
       </div>

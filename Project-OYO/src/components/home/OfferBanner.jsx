@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
 
 const OfferBanner = () => {
   return (
@@ -68,7 +67,7 @@ const OfferBanner = () => {
             <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center shadow-2xl">
 
               <h3 className="text-4xl font-bold text-white">
-                <CountUp end={10000} duration={4} />+
+                10000+
               </h3>
 
               <p className="text-red-100 mt-3">
@@ -81,7 +80,7 @@ const OfferBanner = () => {
             <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center shadow-2xl">
 
               <h3 className="text-4xl font-bold text-white">
-                <CountUp end={5} duration={4} />M+
+                5M+
               </h3>
 
               <p className="text-red-100 mt-3">
@@ -94,7 +93,7 @@ const OfferBanner = () => {
             <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center shadow-2xl">
 
               <h3 className="text-4xl font-bold text-white">
-                <CountUp end={120} duration={4} />+
+                120+
               </h3>
 
               <p className="text-red-100 mt-3">
