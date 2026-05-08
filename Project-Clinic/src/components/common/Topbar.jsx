@@ -25,35 +25,62 @@ const Topbar = () => {
         }}
         className="
           bg-[#175CDD]
-          h-11
+          min-h-11
           flex
           items-center
           justify-center
           border-b
           border-blue-400/20
+          px-3
+          py-2
         "
       >
 
         {/* CONTAINER */}
-        <div className="w-[68%] max-w-[1320px]">
+        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%] max-w-[1320px]">
 
           {/* FLEX */}
-          <div className="flex justify-between items-center text-white">
+          <div
+            className="
+              flex
+              flex-col
+              sm:flex-row
+              justify-between
+              items-center
+              gap-3
+              text-white
+            "
+          >
 
             {/* =====================================================
                             LEFT SIDE
             ===================================================== */}
 
-            <div className="flex items-center gap-6 text-[14px] font-medium">
+            <div
+              className="
+                flex
+                flex-col
+                sm:flex-row
+                items-center
+                gap-3
+                sm:gap-6
+                text-[12px]
+                sm:text-[13px]
+                md:text-[14px]
+                font-medium
+              "
+            >
 
               {/* EMAIL */}
               <motion.div
                 whileHover={{ y: -1 }}
+                transition={{ duration: 0.2 }}
                 className="
                   flex
                   items-center
                   gap-2
                   cursor-pointer
+                  text-center
                 "
               >
                 <MdEmail className="text-[15px]" />
@@ -63,6 +90,7 @@ const Topbar = () => {
                   className="
                     hover:underline
                     underline-offset-4
+                    break-all
                   "
                 >
                   contact@example.com
@@ -72,6 +100,7 @@ const Topbar = () => {
               {/* PHONE */}
               <motion.div
                 whileHover={{ y: -1 }}
+                transition={{ duration: 0.2 }}
                 className="
                   flex
                   items-center
@@ -91,7 +120,14 @@ const Topbar = () => {
                             RIGHT SIDE
             ===================================================== */}
 
-            <div className="flex items-center gap-5">
+            <div
+              className="
+                flex
+                items-center
+                gap-4
+                sm:gap-5
+              "
+            >
 
               {/* TWITTER */}
               <motion.a
@@ -99,6 +135,7 @@ const Topbar = () => {
                   y: -2,
                   scale: 1.1,
                 }}
+                transition={{ duration: 0.2 }}
                 href="/"
                 className="
                   text-white/75
@@ -107,7 +144,7 @@ const Topbar = () => {
                   duration-300
                 "
               >
-                <FaTwitter className="text-[14px]" />
+                <FaTwitter className="text-[13px] sm:text-[14px]" />
               </motion.a>
 
               {/* FACEBOOK */}
@@ -116,6 +153,7 @@ const Topbar = () => {
                   y: -2,
                   scale: 1.1,
                 }}
+                transition={{ duration: 0.2 }}
                 href="/"
                 className="
                   text-white/75
@@ -124,7 +162,7 @@ const Topbar = () => {
                   duration-300
                 "
               >
-                <FaFacebookF className="text-[13px]" />
+                <FaFacebookF className="text-[12px] sm:text-[13px]" />
               </motion.a>
 
               {/* INSTAGRAM */}
@@ -133,6 +171,7 @@ const Topbar = () => {
                   y: -2,
                   scale: 1.1,
                 }}
+                transition={{ duration: 0.2 }}
                 href="/"
                 className="
                   text-white/75
@@ -141,7 +180,7 @@ const Topbar = () => {
                   duration-300
                 "
               >
-                <FaInstagram className="text-[14px]" />
+                <FaInstagram className="text-[13px] sm:text-[14px]" />
               </motion.a>
 
               {/* LINKEDIN */}
@@ -150,6 +189,7 @@ const Topbar = () => {
                   y: -2,
                   scale: 1.1,
                 }}
+                transition={{ duration: 0.2 }}
                 href="/"
                 className="
                   text-white/75
@@ -158,7 +198,7 @@ const Topbar = () => {
                   duration-300
                 "
               >
-                <FaLinkedinIn className="text-[14px]" />
+                <FaLinkedinIn className="text-[13px] sm:text-[14px]" />
               </motion.a>
 
             </div>

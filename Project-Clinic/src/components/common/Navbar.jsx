@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { IoIosArrowDown } from "react-icons/io";
+
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       {/* NAVBAR */}
@@ -34,10 +38,10 @@ const Navbar = () => {
       >
 
         {/* CONTAINER */}
-        <div className="w-[68%] max-w-[1320px]">
+        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%] max-w-[1320px]">
 
           {/* FLEX */}
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-4">
 
             {/* =====================================================
                             LOGO
@@ -46,26 +50,34 @@ const Navbar = () => {
             <motion.div
               whileHover={{ scale: 1.03 }}
               className="
-                text-[38px]
+                text-[28px]
+                sm:text-[32px]
+                md:text-[38px]
                 font-bold
                 tracking-[-2px]
                 text-[#11224d]
                 cursor-pointer
+                whitespace-nowrap
               "
             >
               Clinic
             </motion.div>
 
             {/* =====================================================
-                            MENU
+                            DESKTOP MENU
             ===================================================== */}
 
             <div
               className="
-                flex
+                hidden
+                md:flex
                 items-center
-                gap-8
-                text-[16px]
+                gap-4
+                lg:gap-6
+                xl:gap-8
+                text-[14px]
+                lg:text-[15px]
+                xl:text-[16px]
                 text-gray-600
                 font-medium
               "
@@ -325,8 +337,82 @@ const Navbar = () => {
               </motion.div>
 
             </div>
+
+            {/* =====================================================
+                            HAMBURGER MENU
+            ===================================================== */}
+
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="
+                md:hidden
+                text-[#11224d]
+                text-[30px]
+              "
+            >
+              {menuOpen ? <HiX /> : <HiMenuAlt3 />}
+            </motion.button>
+
           </div>
         </div>
+
+        {/* =====================================================
+                        MOBILE MENU
+        ===================================================== */}
+
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="
+                absolute
+                top-20
+                left-0
+                w-full
+                bg-white
+                shadow-xl
+                border-t
+                border-gray-100
+                md:hidden
+              "
+            >
+              <div className="flex flex-col p-6 gap-5 text-gray-700 font-medium">
+
+                <Link to="/" onClick={() => setMenuOpen(false)}>
+                  Home
+                </Link>
+
+                <Link to="/about" onClick={() => setMenuOpen(false)}>
+                  About
+                </Link>
+
+                <a href="/">Departments</a>
+
+                <a href="/">Services</a>
+
+                <a href="/">Doctors</a>
+
+                <div className="flex items-center gap-2">
+                  <span>More Pages</span>
+                  <IoIosArrowDown />
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span>Dropdown</span>
+                  <IoIosArrowDown />
+                </div>
+
+                <a href="/">Contact</a>
+
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </motion.header>
     </>
   );

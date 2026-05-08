@@ -22,21 +22,24 @@ const HeroSection = () => {
       {/* HERO SECTION */}
       <section
         className="
-          h-[78vh]
+          min-h-screen
+          lg:h-[78vh]
           bg-[#f7f9fc]
           overflow-hidden
           flex
           items-center
+          py-14
+          lg:py-0
         "
       >
         {/* CENTER WRAPPER */}
         <div className="w-full flex justify-center">
 
           {/* CONTAINER */}
-          <div className="w-[68%] max-w-[1320px]">
+          <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[68%] max-w-[1320px]">
 
             {/* GRID */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
 
               {/* =====================================================
                               LEFT CONTENT
@@ -46,15 +49,16 @@ const HeroSection = () => {
                 initial={{ opacity: 0, x: -80 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9 }}
+                className="order-2 lg:order-1"
               >
 
                 {/* BADGES */}
-                <div className="flex flex-wrap gap-4 mb-6">
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-6">
 
                   <div className="flex items-center gap-2 bg-[#E0E9F8] px-4 py-2 rounded-full">
                     <FiShield className="text-blue-600 text-sm" />
 
-                    <span className="text-blue-600 font-semibold text-sm">
+                    <span className="text-blue-600 font-semibold text-xs sm:text-sm">
                       Accredited
                     </span>
                   </div>
@@ -62,7 +66,7 @@ const HeroSection = () => {
                   <div className="flex items-center gap-2 bg-[#E0E9F8] px-4 py-2 rounded-full">
                     <FiClock className="text-blue-600 text-sm" />
 
-                    <span className="text-blue-600 font-semibold text-sm">
+                    <span className="text-blue-600 font-semibold text-xs sm:text-sm">
                       24/7 Emergency
                     </span>
                   </div>
@@ -70,7 +74,7 @@ const HeroSection = () => {
                   <div className="flex items-center gap-2 bg-[#E0E9F8] px-4 py-2 rounded-full">
                     <FaStar className="text-blue-600 text-sm" />
 
-                    <span className="text-blue-600 font-semibold text-sm">
+                    <span className="text-blue-600 font-semibold text-xs sm:text-sm">
                       4.9/5 Rating
                     </span>
                   </div>
@@ -79,10 +83,13 @@ const HeroSection = () => {
                 {/* HEADING */}
                 <h1
                   className="
-                    text-[46px]
+                    text-[38px]
+                    sm:text-[48px]
+                    md:text-[58px]
                     lg:text-[66px]
                     leading-[1.1]
-                    tracking-[-3px]
+                    tracking-[-2px]
+                    lg:tracking-[-3px]
                     font-bold
                     text-[#11224d]
                     mb-6
@@ -106,7 +113,9 @@ const HeroSection = () => {
                 {/* DESCRIPTION */}
                 <p
                   className="
-                    text-[18px]
+                    text-[15px]
+                    sm:text-[16px]
+                    lg:text-[18px]
                     leading-[1.7]
                     text-gray-500
                     max-w-[580px]
@@ -119,10 +128,10 @@ const HeroSection = () => {
                 </p>
 
                 {/* STATS */}
-                <div className="flex flex-wrap gap-12 mb-8">
+                <div className="flex flex-wrap gap-8 sm:gap-12 mb-8">
 
                   <div>
-                    <h3 className="text-4xl font-extrabold text-blue-600">
+                    <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-600">
                       15+
                     </h3>
 
@@ -132,7 +141,7 @@ const HeroSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-4xl font-extrabold text-blue-600">
+                    <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-600">
                       5000+
                     </h3>
 
@@ -142,7 +151,7 @@ const HeroSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-4xl font-extrabold text-blue-600">
+                    <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-600">
                       50+
                     </h3>
 
@@ -153,12 +162,14 @@ const HeroSection = () => {
                 </div>
 
                 {/* BUTTONS */}
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
 
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="
+                      w-full
+                      sm:w-auto
                       bg-blue-600
                       hover:bg-blue-700
                       text-white
@@ -176,6 +187,8 @@ const HeroSection = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="
+                      w-full
+                      sm:w-auto
                       border-2
                       border-blue-600
                       text-blue-600
@@ -185,6 +198,7 @@ const HeroSection = () => {
                       font-semibold
                       flex
                       items-center
+                      justify-center
                       gap-3
                       hover:bg-blue-50
                     "
@@ -203,7 +217,8 @@ const HeroSection = () => {
                     border
                     border-[#dbe5f3]
                     rounded-2xl
-                    px-5
+                    px-4
+                    sm:px-5
                     py-4
                     flex
                     items-center
@@ -214,6 +229,7 @@ const HeroSection = () => {
                 >
                   <div
                     className="
+                      min-w-12
                       w-12
                       h-12
                       rounded-full
@@ -231,7 +247,7 @@ const HeroSection = () => {
                       Emergency Hotline
                     </p>
 
-                    <h4 className="text-xl font-bold text-[#11224d]">
+                    <h4 className="text-lg sm:text-xl font-bold text-[#11224d]">
                       +1 (555) 911-2468
                     </h4>
                   </div>
@@ -246,7 +262,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, x: 80 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9 }}
-                className="relative flex justify-end"
+                className="relative flex justify-center lg:justify-end order-1 lg:order-2"
               >
 
                 {/* FLOATING CIRCLES */}
@@ -260,10 +276,16 @@ const HeroSection = () => {
                   }}
                   className="
                     absolute
-                    -top-13
-                    -left-18
-                    w-[210px]
-                    h-[210px]
+                    -top-8
+                    -left-6
+                    sm:-left-10
+                    lg:-left-18
+                    w-[120px]
+                    sm:w-[160px]
+                    lg:w-[210px]
+                    h-[120px]
+                    sm:h-[160px]
+                    lg:h-[210px]
                     rounded-full
                     bg-blue-100
                     opacity-80
@@ -279,10 +301,15 @@ const HeroSection = () => {
                   }}
                   className="
                     absolute
-                    top-60
-                    -left-10
-                    w-[120px]
-                    h-[120px]
+                    top-40
+                    -left-4
+                    lg:-left-10
+                    w-[80px]
+                    sm:w-[100px]
+                    lg:w-[120px]
+                    h-[80px]
+                    sm:h-[100px]
+                    lg:h-[120px]
                     rounded-full
                     bg-blue-100
                     opacity-80
@@ -298,10 +325,15 @@ const HeroSection = () => {
                   }}
                   className="
                     absolute
-                    -bottom-8
-                    -right-18
-                    w-[170px]
-                    h-[170px]
+                    -bottom-6
+                    -right-6
+                    lg:-right-18
+                    w-[100px]
+                    sm:w-[130px]
+                    lg:w-[170px]
+                    h-[100px]
+                    sm:h-[130px]
+                    lg:h-[170px]
                     rounded-full
                     bg-blue-100
                     opacity-80
@@ -309,7 +341,7 @@ const HeroSection = () => {
                 />
 
                 {/* IMAGE WRAPPER */}
-                <div className="relative z-10">
+                <div className="relative z-10 w-full max-w-[620px]">
 
                   {/* MAIN IMAGE */}
                   <motion.img
@@ -319,8 +351,8 @@ const HeroSection = () => {
                     alt="Healthcare"
                     className="
                       w-full
-                      max-w-[620px]
-                      rounded-[38px]
+                      rounded-[25px]
+                      sm:rounded-[38px]
                       object-cover
                       shadow-[0_20px_60px_rgba(0,0,0,0.10)]
                     "
@@ -331,23 +363,31 @@ const HeroSection = () => {
                     whileHover={{ y: -6 }}
                     className="
                       absolute
-                      top-6
-                      right-6
+                      top-4
+                      right-4
+                      sm:top-6
+                      sm:right-6
                       bg-white
                       rounded-2xl
                       shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                      px-5
-                      py-5
+                      px-3
+                      sm:px-5
+                      py-3
+                      sm:py-5
                       flex
                       items-center
-                      gap-4
-                      w-[260px]
+                      gap-3
+                      sm:gap-4
+                      w-[210px]
+                      sm:w-[260px]
                     "
                   >
                     <div
                       className="
-                        w-14
-                        h-14
+                        w-12
+                        h-12
+                        sm:w-14
+                        sm:h-14
                         rounded-2xl
                         bg-blue-100
                         flex
@@ -355,19 +395,19 @@ const HeroSection = () => {
                         justify-center
                       "
                     >
-                      <FiCalendar className="text-blue-600 text-2xl" />
+                      <FiCalendar className="text-blue-600 text-xl sm:text-2xl" />
                     </div>
 
                     <div>
-                      <h5 className="font-bold text-[#11224d]">
+                      <h5 className="font-bold text-[#11224d] text-sm sm:text-base">
                         Next Available
                       </h5>
 
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 text-xs sm:text-sm">
                         Today 2:30 PM
                       </p>
 
-                      <small className="text-gray-400">
+                      <small className="text-gray-400 text-[11px] sm:text-xs">
                         Dr. Sarah Johnson
                       </small>
                     </div>
@@ -378,16 +418,20 @@ const HeroSection = () => {
                     whileHover={{ y: -6 }}
                     className="
                       absolute
-                      bottom-6
-                      left-6
+                      bottom-4
+                      left-4
+                      sm:bottom-6
+                      sm:left-6
                       bg-white
                       rounded-2xl
                       shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                      px-6
-                      py-5
+                      px-4
+                      sm:px-6
+                      py-4
+                      sm:py-5
                     "
                   >
-                    <div className="flex gap-1 text-yellow-400 mb-3">
+                    <div className="flex gap-1 text-yellow-400 mb-2 sm:mb-3 text-sm">
                       <FaStar />
                       <FaStar />
                       <FaStar />
@@ -395,11 +439,11 @@ const HeroSection = () => {
                       <FaStar />
                     </div>
 
-                    <h4 className="text-xl text-center font-bold text-[#11224d]">
+                    <h4 className="text-lg sm:text-xl text-center font-bold text-[#11224d]">
                       4.9/5
                     </h4>
 
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       1,234 Reviews
                     </p>
                   </motion.div>
